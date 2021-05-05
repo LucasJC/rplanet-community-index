@@ -1,7 +1,3 @@
-<script lang="ts">
-
-</script>
-
 <main>
   <footer class="footer">
     <div class="content has-text-centered">
@@ -11,6 +7,3 @@
     </div>
   </footer>
 </main>
-
-<style>
-</style>

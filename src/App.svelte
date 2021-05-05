@@ -2,7 +2,8 @@
 	import Footer from "./Footer.svelte";
 	import { GoogleAnalytics } from '@beyonk/svelte-google-analytics'
 	import { Site } from "./types";
-
+	import Header from "./Header.svelte";
+	import SiteView from "./SiteView.svelte";
 	const sites: Site[] = [
 		{
 			url: "https://rplanet.io/",
@@ -66,48 +67,15 @@
 		}
 
 	];
-
-	let selectedSite = sites[0];
-
 </script>
 
 <main>
 	<GoogleAnalytics properties={["G-2FJZL5G2Q1"]} />
-	<p class="title centered">RPlanet Community Index</p>
-	<p class="centered">Collection of external links to useful tools and information related to the <a href="https://rplanet.io" target="_blank">RPlanet</a> game.</p>
-	<p class="centered">Contacting information is available at the bottom of this page.</p>
+	<Header/>
 	<div class="section">
 			{#each sites as site}
-				<div class="card m-4">
-					<div class="card-content">
-						<div class="media">
-							<div class="media-content">
-								<p class="title is-4">{site.title}</p>
-							</div>
-						</div>
-						<p class="subtitle is-6">URL: <a href={site.url} target="_blank">{site.url}</a></p>
-						<p>{site.description}</p>
-					</div>
-				</div>
+				<SiteView {site} />
 			{/each}
 	</div>
-	<Footer></Footer>
-
+	<Footer/>
 </main>
-
-<style>
-	main {
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-		height: 100%;
-	}
-	.centered {
-		text-align: center;
-	}
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
