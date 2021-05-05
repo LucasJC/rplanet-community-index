@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Footer from "./Footer.svelte";
+	import { GoogleAnalytics } from '@beyonk/svelte-google-analytics'
 	import { Site } from "./types";
 
 	const sites: Site[] = [
@@ -71,6 +72,7 @@
 </script>
 
 <main>
+	<GoogleAnalytics properties={["G-2FJZL5G2Q1"]} />
 	<p class="title centered">RPlanet Community Index</p>
 	<p class="centered">Collection of external links to useful tools and information related to the <a href="https://rplanet.io" target="_blank">RPlanet</a> game.</p>
 	<p class="centered">Contacting information is available at the bottom of this page.</p>
